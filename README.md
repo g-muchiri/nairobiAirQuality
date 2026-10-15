@@ -1,3 +1,6 @@
+# NairobiAirQuality
+This is an environmental data platform for Nairobi. It will be used to monitor air-quality conditions across the city using data published on openAQ
+
 ### Nairobi Air Quality Data Platform
 The project is one that fetches data from OpenAQ API, transforms it through a series of steps and finally loads it into postgresql for processing
 
@@ -40,3 +43,5 @@ The project is one that fetches data from OpenAQ API, transforms it through a se
 We will be extracting the following
 1. Sensors from the location
 2. Measurements from the sensors and storing them away in a database
+
+
