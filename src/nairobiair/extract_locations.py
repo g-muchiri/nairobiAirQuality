@@ -1,13 +1,12 @@
 import requests
-import pandas as pd
-from src.nairobiair.basic_setup import location_url, header, extract_params
-from src.nairobiair.logger import nairobiAir_logger
+from nairobiair.basic_setup import location_url, header, extract_params
+from nairobiair.logger import nairobiAir_logger
 
 extract_location_logger = nairobiAir_logger()
 def location_extractor():
     try:
-        location_response = requests.get(location_url, params=extract_params, headers=header)
-        location_response.raise_for_status
+        location_response = requests.get(location_url, params=extract_params, headers=header, timeout=30)
+        location_response.raise_for_status()
         if location_response.status_code == 200:
             extract_location_logger.info("Location data successfully extracted")
         else:
@@ -18,8 +17,10 @@ def location_extractor():
 
     return location_response.json()['results']
 
-#trial1=location_extractor()
-#print(trial1)
+# trial1=location_extractor()
+# print(trial1)
+#print(trial1[0].get('id'))
+
 
 
 

@@ -64,3 +64,73 @@ LINE 11: CONSTRAINT indempotency_proof UNIQUE(sensor_id,parameter_uni...
 2026-09-17 06:20:44,503 - INFO -src.nairobiair.logger: Measurements data has been successfully fetched
 2026-09-17 06:23:38,135 - INFO -src.nairobiair.logger: Measurements data has been successfully fetched
 2026-09-17 06:30:06,292 - INFO -src.nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 19:30:07,245 - INFO -src.nairobiair.logger: Location data successfully extracted
+2026-10-17 20:52:45,001 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:15:03,458 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 21:15:58,797 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 21:19:15,554 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 21:38:53,848 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:40:41,881 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:40:43,023 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:41:25,636 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:42:37,256 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:42:49,777 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:43:02,782 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:44:47,627 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:47:42,441 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:47:43,823 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 21:48:08,243 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:48:09,055 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 21:52:44,628 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 21:52:46,034 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 22:03:12,061 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:03:32,595 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:11:41,266 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:11:42,087 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:14:52,674 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:14:53,467 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:15:11,920 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:15:12,819 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:16:37,650 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:16:38,484 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:17:39,357 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:17:40,140 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:17:40,923 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:17:41,785 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:19:49,508 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:19:50,331 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:20:35,963 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:20:36,346 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:20:54,002 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:20:55,046 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:21:26,401 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:22:47,541 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:22:47,930 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:26:32,540 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:26:33,428 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:27:06,139 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:27:07,036 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:32:29,026 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:32:29,410 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:32:29,791 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:32:30,446 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-17 22:33:26,708 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:33:27,708 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-17 22:33:28,066 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-17 22:33:28,700 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-18 11:16:30,326 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-18 11:16:31,333 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-18 11:16:32,251 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-18 11:16:33,660 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-18 11:36:35,038 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-18 11:36:52,519 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-18 11:38:50,468 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-18 11:38:51,464 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-24 09:52:06,305 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-24 09:54:26,353 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-24 09:54:27,217 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-24 09:57:42,744 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-24 09:57:43,797 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-24 09:57:44,805 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-24 09:57:45,642 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-24 09:57:46,265 - INFO -nairobiair.logger: Measurements data has been successfully fetched
