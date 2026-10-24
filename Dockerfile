@@ -1,5 +1,6 @@
 FROM apache/airflow:3.3.0
 
+
 WORKDIR /opt/airflow
 
 RUN pip install --no-cache-dir \
@@ -10,4 +11,4 @@ RUN pip install --no-cache-dir \
 
 COPY --chown=airflow:root src/ /opt/airflow/src/
 
-ENV PYTHONPATH=/opt/airflow
+ENV PYTHONPATH=/opt/airflow/src

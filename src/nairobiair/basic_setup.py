@@ -1,7 +1,5 @@
 import os
 from dotenv import load_dotenv
-import requests
-from datetime import datetime, timedelta
 
 load_dotenv()
 
@@ -24,14 +22,8 @@ extract_params = {
     "radius":25000,
     "limit":1000
 }
-yesterday = datetime.now() - timedelta(days=1)
-date_from = datetime(yesterday.year, 1, 1, 0, 0, 0)
-date_to = datetime(yesterday.year, yesterday.month, yesterday.day, 23, 59,59)
 
-
-measurements_params = {
-    "datetime_from":date_from,
-    "datetime_to":date_to,
+measurements_params = {    
     "limit":1000,
     "page":1
 }

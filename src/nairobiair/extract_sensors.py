@@ -7,8 +7,8 @@ extract_sensor_logger = nairobiAir_logger()
 
 ##For testing purposes
 
-from nairobiair.extract_locations import location_extractor
-locations= location_extractor()
+# from nairobiair.extract_locations import location_extractor
+# locations= location_extractor()
 
 def sensor_extractor (location):
     location_id = location.get('id')
@@ -16,10 +16,7 @@ def sensor_extractor (location):
         actual_sensors_url = sensors_url.format(location_id = location_id)
         sensor_response = requests.get(actual_sensors_url,headers=header,timeout=30)
         sensor_response.raise_for_status()
-        if sensor_response.status_code == 200:
-            extract_sensor_logger.info("Sensor Data successfully extracted")
-        else:
-            extract_sensor_logger.info(f"Please note the status code for the above is{sensor_response.status_code}")
+        extract_sensor_logger.info("Sensor Data successfully extracted")
     except Exception as e:
         extract_sensor_logger.error(f"Sensor data has not successfully pulled due to err {e}")
         raise
@@ -31,7 +28,7 @@ def sensor_extractor (location):
     return sensors_list
 
 
-trial = sensor_extractor(locations[0])
-print(trial)
+# trial = sensor_extractor(locations[0])
+# print(trial)
 
 

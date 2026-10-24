@@ -134,3 +134,7 @@ LINE 11: CONSTRAINT indempotency_proof UNIQUE(sensor_id,parameter_uni...
 2026-10-24 09:57:44,805 - INFO -nairobiair.logger: Location data successfully extracted
 2026-10-24 09:57:45,642 - INFO -nairobiair.logger: Sensor Data successfully extracted
 2026-10-24 09:57:46,265 - INFO -nairobiair.logger: Measurements data has been successfully fetched
+2026-10-24 18:17:41,598 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-24 18:17:42,545 - INFO -nairobiair.logger: Sensor Data successfully extracted
+2026-10-24 18:20:15,167 - INFO -nairobiair.logger: Location data successfully extracted
+2026-10-24 18:20:15,987 - INFO -nairobiair.logger: Sensor Data successfully extracted
