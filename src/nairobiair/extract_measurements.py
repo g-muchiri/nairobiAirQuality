@@ -21,28 +21,45 @@ def yesterday_window_utc()-> tuple[str, str]:
     stop = today - timedelta(seconds=1)
     return start.strftime(ISO_FMT), stop.strftime(ISO_FMT)
 
-def measurements_extractor(sensor_data, date_from: str | None = None, date_to: str|None = None):
-    sensors_id = sensor_data.get('id')
-    if (date_from is None) != (date_to is None):
+def measurements_extractor(sensor_data, datetime_from: str | None = None, datetime_to: str|None = None, max_pages = 50, limit = 1000):
+    sensors_id = sensor_data.get('sensor_id')
+    if (datetime_from is None) != (datetime_to is None):
         raise ValueError("Please pass both date_from and date_to or none at all")
-    if (date_from is None) and (date_to is None):
-        date_from, date_to = yesterday_window_utc()
+    if (datetime_from is None) and (datetime_to is None):
+        datetime_from, datetime_to = yesterday_window_utc()
 
-    current_params = dict(measurements_params)
-    current_params['datetime_from'] = date_from
-    current_params['datetime_to'] = date_to
-    try:
-        actual_measurements_url = measurements_url.format(sensors_id = sensors_id)
-        measurements_response = requests.get(actual_measurements_url, headers=header, timeout=30, params=current_params)
-        measurements_response.raise_for_status()
-    except Exception as e:
-        measurements_logger.error(f"Measurement data has not been fetched due to error {e}")
-        raise
+    all_results = []
+    page = 1
 
-   
-    normalized_measurements =measurements_response.json()['results']
-    
-    return normalized_measurements
+    while page <= max_pages:
+        current_params = dict(measurements_params)
+        current_params['datetime_from'] = datetime_from
+        current_params['datetime_to'] = datetime_to
+        current_params['page']= page
+        try:
+            actual_measurements_url = measurements_url.format(sensors_id = sensors_id)
+            measurements_response = requests.get(actual_measurements_url, headers=header, timeout=30, params=current_params)
+            measurements_response.raise_for_status()
+
+            normalized_measurements =measurements_response.json()['results']
+            all_results.extend(normalized_measurements)
+            measurements_logger.info(f"Our first Run has a length of {len(all_results)}")
+
+            if len(all_results)<= limit:
+                measurements_logger.info("We have fetched all results")
+                break
+            else:
+                page += 1
+                time.sleep(0.5)
+
+            measurements_logger.info(f'Fetched {len(normalized_measurements)} measurements for sensor_id {sensors_id} from {datetime_from} to {datetime_to}')
+        except Exception as e:
+            measurements_logger.error(f"Measurement data has not been fetched due to error {e}")
+            raise
+    else:
+        measurements_logger.warning(f"We have hit the maximum pages. Please confirm if you have more data")
+            
+    return all_results
 
 # msmt_trial = measurements_extractor(sensor_data=sensors[0])
 # print(msmt_trial)

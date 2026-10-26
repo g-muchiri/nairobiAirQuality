@@ -24,8 +24,7 @@ extract_params = {
 }
 
 measurements_params = {    
-    "limit":1000,
-    "page":1
+    "limit":1000
 }
 
 

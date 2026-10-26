@@ -1,4 +1,4 @@
-from datetime import datetime, timezone #,timedelta
+from datetime import datetime, timezone ,timedelta
 from airflow.sdk import dag, task
 import os
 from nairobiair.extract_locations import location_extractor
@@ -36,14 +36,14 @@ def nairobi_air_dag():
     @task #This one here will use dynamic task mapping
     def get_sensors(location: dict) -> list[dict]:
         try:
-            sensors = sensor_extractor(location_id=location)
+            sensors = sensor_extractor(location= location)
             sensor_data =[
                 {"location_id":location.get('id'),
                  "location_name":location.get('name'),
                  "sensor_id":sensor.get('id'),
                  "parameter_name": sensor.get('parameter',{}).get('name'),
                  "parameter_units": sensor.get('parameter',{}).get('units')} 
-            for sensor in sensors]
+            for sensor in (sensors or [])]
             dag_logger.info("sensors data has been successfully fetched and modified")
 
             return sensor_data
@@ -57,12 +57,20 @@ def nairobi_air_dag():
 
     @task
     def flattening_sensors(sensor_not_flattened: list[list[dict]]) -> list[dict]:
-       return [flattened_sensors for location in sensor_not_flattened for flattened_sensors in location]
+        try:
+            flat = [flattened_sensors for location in sensor_not_flattened for flattened_sensors in location]
+            return flat
+        except Exception as e:
+            dag_logger.error(f"Flattening has an error {e}")
+            raise 
+       
     
-    @task
+    
+    @task(max_active_tis_per_dag=3, retries=3, retry_delay=timedelta(seconds=30), retry_exponential_backoff=True)
     def get_measurements(sensor: dict) -> list[dict]:
         try:
             measurements = measurements_extractor(sensor)
+            dag_logger.info(f"Sensor received: {sensor['sensor_id']}")
             recorded_measurements=[
                 {"location_id":sensor["location_id"],
                  "location_name":sensor["location_name"],

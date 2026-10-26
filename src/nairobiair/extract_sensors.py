@@ -8,7 +8,7 @@ extract_sensor_logger = nairobiAir_logger()
 ##For testing purposes
 
 # from nairobiair.extract_locations import location_extractor
-# locations= location_extractor()
+#locations= location_extractor()
 
 def sensor_extractor (location):
     location_id = location.get('id')
