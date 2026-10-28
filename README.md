@@ -1,8 +1,8 @@
 # NairobiAirQuality
-This is an environmental data platform for Nairobi. It will be used to monitor air-quality conditions across the city using data published on openAQ
+This is an environmental data platform for Nairobi. 
+It will be used to collect, transform and store air-quality data published on openAQ with the intention of monitoring climate conditions across the city using the data
 
-### Nairobi Air Quality Data Platform
-The project is one that fetches data from OpenAQ API, transforms it through a series of steps and finally loads it into postgresql for processing
+Data is fetched from OpenAQ API, transforms it through a series of steps and finally loads it into postgresql for accessibility
 
 #### Understanding the data source and jargon used in the API
 
@@ -35,13 +35,14 @@ The project is one that fetches data from OpenAQ API, transforms it through a se
     A page could have many incoming records when traversing large endpoints such as OpenAQ. Two parameters should be passed  `limit = 100` and `page = 1`
 8. What happens if an invalid API key is keyed in and what is the status code raised
 
-    In the event one keys ina a wrong API KEY, an `AuthenicationError` is raised. If  there is no API KEY then `MissingAPIKeyError` is thrown and the status code thrown take the form 401. Unauthorised. 
+    In the event one keys in a a wrong API KEY, an `AuthenicationError` is raised. If  there is no API KEY then `MissingAPIKeyError` is thrown and the status code thrown take the form 401. Unauthorised. 
 
 ### The next order of business will be extraction of data from the API, loading and designing a dynamic Task Mapping in Airflow
 
 #### Extraction
 We will be extracting the following
-1. Sensors from the location
-2. Measurements from the sensors and storing them away in a database
+1. Location data (the different locations with sensors within a 25K radius of the coordinates shared)
+2. Sensors from the location
+3. Measurements from the sensors and the final step will be storing them away in a database
 
 
