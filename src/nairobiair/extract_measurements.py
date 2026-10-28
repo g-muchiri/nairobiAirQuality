@@ -1,6 +1,6 @@
 ##This task will apply dynamic task mapping
 import requests
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone, time
 from nairobiair.basic_setup import measurements_url, header, measurements_params
 from nairobiair.logger import nairobiAir_logger
 

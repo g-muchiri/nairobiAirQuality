@@ -5,6 +5,7 @@ from nairobiair.extract_locations import location_extractor
 from nairobiair.extract_sensors import sensor_extractor
 from nairobiair.extract_measurements import measurements_extractor
 from nairobiair.logger import nairobiAir_logger
+from nairobiair.load import load_data
 
 dag_logger = nairobiAir_logger()
 requirements_path = os.path.join(os.path.dirname(__file__),"..","requirements.txt")
@@ -89,11 +90,20 @@ def nairobi_air_dag():
         except Exception as g:
             dag_logger.error(f"Measurements data could not fetch due to error {g}")
             raise
+
+    @task
+    def load_final_data(final_recorded_measurements):
+        try:
+            load_data(data_to_be_loaded=final_recorded_measurements)
+            dag_logger.info("Dag has ran and finished loading data")
+        except Exception as e:
+            dag_logger.error(f"Loading stage has failed due to error {e}")
     
 
     locations= get_locations()
     nested_sensors = get_sensors.expand(location=locations)
     flattened_sensors = flattening_sensors(nested_sensors)
     measurements = get_measurements.expand(sensor=flattened_sensors)
+    load_final_data(measurements)
     
 nairobi_air_dag()
